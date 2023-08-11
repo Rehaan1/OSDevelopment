@@ -32,7 +32,7 @@ puts:
 	; loadsb, loadsw, loadsd: these instructions load a byte/word/doubleword from ds:si into
 	; al/ax/eax, then increment si by the number of bytes loaded
 	
-	loadsb	; loads next character in al
+	lodsb	; loads next character in al
 	or al, al	; verify if next character is null
 	jz .done ; jz : jumps to destination if zero flag is set
 
@@ -71,7 +71,7 @@ main:
 	jmp .halt
 
 
-msg_hello : 'Hello World!', ENDL, 0
+msg_hello: db 'Hello World!', ENDL, 0
 
 ; bios expects that last two bytes of the first sector is AA55
 ; we are putting it in standard floppy disk
