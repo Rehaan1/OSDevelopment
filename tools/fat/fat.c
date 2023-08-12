@@ -149,6 +149,5 @@ int main(int argc, char** argv)
     
     free(g_Fat);
     free(g_RootDirectory);
-    free(fileEntry);
     return 0;
 }
