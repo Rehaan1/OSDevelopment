@@ -77,7 +77,7 @@ start:
 	; read drive parameters using BIOS routine Interrupt (sectors per track and head count)
 	; instead of relying on data from formatted disk letting BIOS tell us
 	push es
-	move ah, 08h
+	mov ah, 08h
 	int 13h
 	jc floppy_error
 	pop es
@@ -384,9 +384,9 @@ disk_reset:
 	popa
 	ret
 
-msg_loading: db 'Loading UTOPIAN Operating System....', ENDL, 0
+msg_loading: db 'Loading UTOPIA..', ENDL, 0
 msg_read_failed: db 'Read From Disk Failed!', ENDL, 0
-msg_kernel_not_found: db 'KERNEL.BIN : UTOPIAN Kernel Not Found!', ENDL, 0
+msg_kernel_not_found: db 'KERNEL.BIN Not Found!', ENDL, 0
 file_kernel_bin: db 'KERNEL  BIN'
 kernel_cluster: dw 0
 
